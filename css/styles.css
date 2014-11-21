@@ -1,0 +1,102 @@
+body{
+	background-image: url(../images/wallpaper.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.titulo{
+	font-size: 50px;
+	font-weight: bolder;
+	margin-top: -5px;
+	color: white;
+	text-shadow:1px 1px 5px black;
+	display:inline;
+}
+
+.author{
+	font-size: 20px;
+	font-family: Courier;
+	display:inline;
+	margin-left: 30px;
+	color: white;
+}
+.resultBody{
+	margin-left: auto;
+	margin-right: auto;
+	  background: -webkit-linear-gradient(#22575e, #3f7f87); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(#22575e, #3f7f87); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(#22575e, #3f7f87); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(#22575e, #3f7f87); /* Standard syntax */
+	width: 800px;
+	border-radius: 20px;
+}
+.inputOrder, .inputData{
+	color:white;
+	text-align: center;
+}
+h1{
+	padding-top: 15px;
+	text-shadow:1px 1px 4px white, -1px -1px 4px white;
+	text-align: center;
+}
+
+.result{
+	overflow: auto;
+	background-color: #008b5e;
+	margin-left: 50px;
+	margin-right: 50px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px white;
+	width: 700px;
+	height: auto;
+
+
+}
+span{
+	font-weight: bolder;
+	color:#6dfffb;
+	font-size: 25px;
+
+}
+
+.topNumber{
+	color: white;
+	font-size: 80px;
+	text-shadow: 1px 1px 5px #fff400, -1px -1px 5px #fff400;
+	float: left;
+	margin-left: 20px;
+	margin-right: 40px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.albumImage{
+	float:right;
+	margin-right: 50px;
+	margin-bottom: 20px;
+	width: 126px;
+	height: 126px;
+	box-shadow: 10px 10px 40px red, -10px -10px 40px orange;
+}
+
+.button{
+	display: inline-block;
+	height:20px;
+	width:160px;
+	background-color:#cc0000;
+	font-family:arial;
+	font-weight:bold;
+	color:#ffffff;
+	border-radius: 5px;
+	margin-top:2px;
+	text-align: center;
+	margin-left: 325px;
+	margin-bottom: 30px;
+}
+
+.button:hover{
+	background-color: #ba0000;
+	border-radius: 10px;
+	vertical-align: center;
+}
