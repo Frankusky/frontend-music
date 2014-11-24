@@ -1,16 +1,27 @@
 // Javascript Code.
 
-function SortElements(){
-	var colors = new Array("red","blue","green");
-	colors.sort();
-	var cj = colors.join(", ");
-	alert("The sorted array contains: " + cj);
-}
 $(document).ready(function(){
+	jQuery(document).ready(function($) { 
+		$.ajax({ 
+			url : "http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=85b8c37b1a6be5182a5ed0549c4a7400&format=json", 
+			dataType : "jsonp", 
+			success : function(parsed_json) { 
+				for(var i = 0; i<50; i++){
+					if (parsed_json["tracks"]["track"][i]["image"]){
+						var imagen = parsed_json["tracks"]["track"][i]["image"][2]["#text"];
+					}else{
+						var imagen = "images/notfound.png";
+					};
+
+					$(".results").append("<div class=\"result span8\"><br><img class=\"albumImage img-polaroid\" src=\""+imagen+"\" align=\"right\"><span class=\"topNumber span1\">#"+(i+1)+"</span><div class=\"span4\"><span>Track: </span> "+parsed_json["tracks"]["track"][i]["name"]+"<br><span>Artist: </span> "+parsed_json["tracks"]["track"][i]["artist"]["name"]+"<br><span>Played: </span> "+parsed_json["tracks"]["track"][i]["playcount"]+" times!<br><span>Length: </span> "+parsed_json["tracks"]["track"][i]["duration"]+"</div></div><br>");
+				};
+			} 
+		}); 
+	});
+
 	var sortInput = document.getElementById("typeOrderID");
 	var dataInput = document.getElementById("dataTypeID");
 	$(".button").click(function(){
-		//alert("Im a uggly test message!");
 		$(".results").empty();
 
 		var trackList = new Array(); //guardara los titulos de las canciones
@@ -66,12 +77,12 @@ $(document).ready(function(){
 						if (orderValue=="asc"){
 							for (var i =0; i<50;i++){
 								var index = sortedIndex[i];
-								$(".results").append("<div class=\"result\"><br><span class=\"topNumber\">#"+(i+1)+"</span><img class=\"albumImage\" src=\""+imageList[index]+"\" align=\"right\"><span>Track: </span> "+trackList[index]+"<br><span>Artist: </span> "+artistList[index]+"<br><span>Played: </span> "+playcountList[index]+" times!<br><span>Length: </span> "+durationList[index]+"</div><br>");
+								$(".results").append("<div class=\"result span8\"><br><img class=\"albumImage img-polaroid\" src=\""+imageList[index]+"\" align=\"right\"><span class=\"topNumber span1\">#"+(i+1)+"</span><div class=\"span4\"><span>Track: </span> "+trackList[index]+"<br><span>Artist: </span> "+artistList[index]+"<br><span>Played: </span> "+playcountList[index]+" times!<br><span>Length: </span> "+durationList[index]+"</div></div><br>");
 							};
 						}else if(orderValue=="des"){
 							for (var i =49; i>=0;i--){
 								var index = sortedIndex[i];
-								$(".results").append("<div class=\"result\"><br><span class=\"topNumber\">#"+(i+1)+"</span><img class=\"albumImage\" src=\""+imageList[index]+"\" align=\"right\"><span>Track: </span> "+trackList[index]+"<br><span>Artist: </span> "+artistList[index]+"<br><span>Played: </span> "+playcountList[index]+" times!<br><span>Length: </span> "+durationList[index]+"</div><br>");
+								$(".results").append("<div class=\"result span8\"><br><img class=\"albumImage img-polaroid\" src=\""+imageList[index]+"\" align=\"right\"><span class=\"topNumber span1\">#"+(i+1)+"</span><div class=\"span4\"><span>Track: </span> "+trackList[index]+"<br><span>Artist: </span> "+artistList[index]+"<br><span>Played: </span> "+playcountList[index]+" times!<br><span>Length: </span> "+durationList[index]+"</div></div><br>");
 							};
 						};
 					}//success

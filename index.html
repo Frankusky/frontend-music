@@ -5,44 +5,88 @@ la estructura correta y guardar TODO tu CSS en el archivo styles.css
  -->
 <html>
 <head>
-	<meta charset="utf-8">
 	<title>Music Frontend Proyect</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<link rel="stylesheet" type="text/css" href="css/boot/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link href="css/boot/bootstrap-responsive.css" rel="stylesheet">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	
 </head>
 
 <body>
-	
-	<div><p class="titulo">Music Frontend Proyect</p><p class="author">By Frank Sam Hu</p> </div>
-	<div class="resultBody">
-		<h1>Top Songs</h1>
-		<form><p class="inputData">
-		Choose data to show:
-		<select class="selectInfo" id="dataTypeID" onchange="myFunction(dataTypeID.value, typeOrderID.value)" autocomplete="off">
-			<option value="nothing" selected="selected">Select data</option>
-			<option value="playcounts">Play counts</option>
-			<option value="duration">Duration</option>
-			<option value="tracksname">Tracks name</option>
-			<option value="artistname">Artist name</option>
-		</select></p></form>
-
-		<form>
-			<p class="inputOrder">
-				Choose sorting type:
-				<select class="selectInfo" id="typeOrderID" onchange="myFunction(typeOrderID.value, dataTypeID.vale)" autocomplete="off">
-					<option value="nothing" selected="selected">Select sorting order</option>
-					<option value="asc">Ascending</option>
-					<option value="des">Descending</option>
-				</select>
-			</p>
-		</form>
-		<div class="button">Submit</div>
-		<div class="results"></div>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="span2"></div>
+			<div class="span8">
+				<div class="row">
+					<div class="span12">
+					<p class="titulo"><a href="index.html">Music Frontend Proyect</a></p>
+					</div>
+				</div>
+				<p class="author">By Frank Sam Hu</p>
+			</div>
+			<div class="span2"></div>
+		</div>
 		<br>
+		<br>
+		<div class="row">
+			<div class="span2"></div>
+			<div class="span8">
+				<div class="resultBody">
+					<div class="row">
+						<div class="span2"></div>
+						<div class="span8">
+							<div class="4"></div>
+							<div class="4"><h1>Top Songs</h1></div>
+							<div class="4"></div>
+						</div>
+						<div class="span2"></div>
+					</div>
+					<form>
+						<p class="inputData">Choose data to show:
+							<select class="selectInfo" id="dataTypeID" onchange="myFunction(dataTypeID.value, typeOrderID.value)" autocomplete="off">
+								<option value="nothing" selected="selected">Select data</option>
+								<option value="playcounts">Play counts</option>
+								<option value="duration">Duration</option>
+								<option value="tracksname">Tracks name</option>
+								<option value="artistname">Artist name</option>
+							</select>
+						</p>
+					</form>
+					<form>
+						<p class="inputOrder">Choose sorting type:
+							<select class="selectInfo" id="typeOrderID" onchange="myFunction(typeOrderID.value, dataTypeID.vale)" autocomplete="off">
+								<option value="nothing" selected="selected">Select sorting order</option>
+								<option value="asc">Ascending</option>
+								<option value="des">Descending</option>
+							</select>
+						</p>
+					</form>
+					<div class="row">
+						<div class="span12">
+							<div class="span3"></div>
+							<div class="span6">
+								<div class="button">Submit</div>
+							</div>
+							<div class="span3"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span12">
+							<div class="results"></div>
+						</div>
+					</div>
+					<br>
+				</div>
+			</div>
+			<div class="span2"></div>
+		</div>
 	</div>
-
 	<script src="js/script.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
